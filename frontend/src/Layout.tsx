@@ -51,7 +51,18 @@ const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 			<SidebarMenu />
 		</Sider>
 		<Layout>
-			<Content style={{ margin: "16px" }}>{children}</Content>
+			<Content
+				style={{
+					background: "#fcefc7",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "top",
+					minHeight: "100vh",
+					width: "100%",
+				}}
+			>
+				{children}
+			</Content>
 		</Layout>
 	</Layout>
 );
