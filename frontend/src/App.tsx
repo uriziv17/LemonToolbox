@@ -6,11 +6,6 @@ import MainPage from "./components/MainPage";
 import AppLayout from "./Layout"; // Import your layout
 
 const App = () => {
-	const [count, setCount] = useState(0);
-
-	const handleClick = () => {
-		setCount((prev) => prev + 1);
-	};
 	return (
 		<Router>
 			<React.Suspense fallback={<div>Loading...</div>}>
