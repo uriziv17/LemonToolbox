@@ -31,7 +31,7 @@ def download_youtube_audio(url: str, output_path: str = ".") -> str:
     return mp3_file_path
 
 if __name__ == "__main__":
-    video_url = "https://youtu.be/5iGUXZEYDFo?si=rkqXztzF1Qg783pf"
+    video_url = "https://www.youtube.com/watch?v=lu60aeS8HME&ab_channel=Bol"
     # download_path = download_youtube_video(video_url, "./downloads")
     download_path = download_youtube_audio(video_url, "./downloads")
     print(f"Downloaded to: {download_path}")
