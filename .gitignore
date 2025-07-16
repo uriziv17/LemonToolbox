@@ -139,4 +139,7 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 # Ignore backend downloads directory
-backend/downloads/
+downloads/
+
+backend/__pycache__/
+backend/*/__pycache__/
