@@ -1,6 +1,5 @@
-import React from "react";
 import DownloadForm from "./DownloadForm";
-import { Divider, Typography } from "antd";
+import { Typography } from "antd";
 
 export default function YoutubeDownloadPage() {
 	return (

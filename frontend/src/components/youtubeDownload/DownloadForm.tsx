@@ -22,14 +22,25 @@ export default async function DownloadForm() {
 				`Failed to download file: ${response.status} ${response.statusText} - ${errorText}`
 			);
 		}
-		// todo: this does not quite work
+
 		const blob = await response.blob();
 		const url = window.URL.createObjectURL(blob);
+
+		let filename = "your_big_fat_file";
+		const disposition = response.headers.get("Content-Disposition");
+		if (disposition && disposition.includes("filename=")) {
+			filename = disposition
+				.split("filename=")[1]
+				.split(";")[0]
+				.replace(/"/g, "");
+		}
+
 		const a = document.createElement("a");
 		a.href = url;
+		a.setAttribute("download", filename); // ✅ this triggers download instead of navigation
 		document.body.appendChild(a);
 		a.click();
-		a.remove();
+		document.body.removeChild(a);
 		window.URL.revokeObjectURL(url);
 	};
 
